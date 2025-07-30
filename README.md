@@ -28,3 +28,45 @@ This command will:
 Build the Java application Docker image.
 
 Start containers for the app, MySQL, and Adminer
+---
+🌐 Access Instructions
+
+✅ Application Usage
+The Java console application will run and log output to your terminal once the container starts.
+It connects to the MySQL database inside the Docker network.
+
+🛠 Adminer Interface
+To view or interact with the database:
+
+Open your browser and go to: http://localhost:8080
+
+Use these credentials:
+
+System: MySQL
+
+Server: db 
+
+Username: root
+
+Password: reema213
+
+Database: library
+
+🧩 Troubleshooting Tip
+If you get a database connection error like:
+
+bash
+
+
+Communications link failure
+Make sure:
+
+The database container is fully up before the Java app tries to connect.
+
+You can restart the setup using:
+
+bash
+
+docker-compose down
+docker-compose up --build
+Or you can add a wait script inside the app container to delay the startup until the DB is ready
