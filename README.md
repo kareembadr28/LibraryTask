@@ -41,7 +41,7 @@ It connects to the MySQL database inside the Docker network.
 🛠 Adminer Interface
 To view or interact with the database:
 
-Open your browser and go to: [http://localhost:8081](http://localhost:8081/)
+Open your browser and go to: [http://localhost:8082](http://localhost:8082/)
 
 Use these credentials:
 
