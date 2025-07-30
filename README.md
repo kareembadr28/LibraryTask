@@ -60,18 +60,20 @@ Database: library
 🧩 Troubleshooting Tip
 If you get a database connection error like:
 
-bash
 
-
+```
 Communications link failure
+```
 Make sure:
 
 The database container is fully up before the Java app tries to connect.
 
 You can restart the setup using:
 
-bash
+
+```bash
 
 docker-compose down
 docker-compose up --build
+```
 Or you can add a wait script inside the app container to delay the startup until the DB is ready
