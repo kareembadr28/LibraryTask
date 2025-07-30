@@ -39,7 +39,7 @@ public class RegularUser extends User implements IBorrowable {
 		new LibraryManager().returnBook(bookId, getId());
 	}
 	
-	public void BookCatalog()
+	public void ViewBookCatalog()
 	{
 		new LibraryManager().viewBooks();
 	}

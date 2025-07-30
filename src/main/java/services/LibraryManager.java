@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
-
 import Model.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
@@ -310,5 +309,43 @@ public class LibraryManager {
 			return null;
 		}
 	}
+	
+	public List<UserBook> getunreturneBooks() {
+		em.getTransaction().begin();
+		try {
+			List<UserBook> userBooks = em.createQuery(
+				"select ub from UserBook ub where ub.returnDate is Null", UserBook.class)
+				.getResultList();
+			em.getTransaction().commit();
+			return userBooks;
+		} catch (Exception e) {
+			if (em.getTransaction().isActive()) {
+				em.getTransaction().rollback();
+			}
+			e.printStackTrace();
+			return new ArrayList<>();
+		}
+	}
+	
+	public List<Book>getborrowedBooks(Long userId) {
+		em.getTransaction().begin();
+		try {
+			List<UserBook> userBooks = em.createQuery(
+				"SELECT ub FROM UserBook ub WHERE ub.user.id = :userId AND ub.returnDate IS NULL", UserBook.class)
+				.setParameter("userId", userId)
+				.getResultList();
+			em.getTransaction().commit();
+			return userBooks.stream()
+				.map(UserBook::getBook)
+				.collect(Collectors.toList());
+		} catch (Exception e) {
+			if (em.getTransaction().isActive()) {
+				em.getTransaction().rollback();
+			}
+			e.printStackTrace();
+			return new ArrayList<>();
+		}
+	}
     
+
 }

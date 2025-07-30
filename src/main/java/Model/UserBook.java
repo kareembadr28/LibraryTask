@@ -64,7 +64,7 @@ public class UserBook {
 	}
 	@Override
 	public String toString() {
-return "UserBook [id=" + id + ", user=" + user + ", book=" + book + ", borrowDate=" + borrowDate
+return "UserBook [id=" + id  + ", borrowDate=" + borrowDate
 				+ ", returnDate=" + returnDate + "]";
 	}
 
