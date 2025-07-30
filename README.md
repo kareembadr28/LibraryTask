@@ -45,7 +45,7 @@ Open your browser and go to: http://localhost:8080
 
 Use these credentials:
 
-System: MySQL
+System: MySQL/MariaDB
 
 Server: db 
 
@@ -54,6 +54,8 @@ Username: root
 Password: reema213
 
 Database: library
+
+---
 
 🧩 Troubleshooting Tip
 If you get a database connection error like:
