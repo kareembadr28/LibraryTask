@@ -22,6 +22,7 @@ To build and run the application with the required containers:
 
 ```bash
 docker-compose up --build
+```
 This command will:
 
 Build the Java application Docker image.
