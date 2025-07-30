@@ -28,8 +28,11 @@ This command will:
 Build the Java application Docker image.
 
 Start containers for the app, MySQL, and Adminer
+
 ---
-🌐 Access Instructions
+
+## 🌐 Access Instructions
+---
 
 ✅ Application Usage
 The Java console application will run and log output to your terminal once the container starts.
